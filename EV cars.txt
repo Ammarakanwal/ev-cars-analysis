@@ -1,0 +1,12 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df=pd.read_csv('D:\iec\portfolio2\66634-ev-data\Electric_Vehicle_Population_Data.csv')
+#print(df.head(50))
+
+# checking for null
+#print(df['VIN (1-10)'].isnull().sum)
+df['County'].isnull().sum()/len(df)
+
