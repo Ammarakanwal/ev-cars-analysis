@@ -14,59 +14,16 @@ df.columns
 df.info()
 df.describe()
 #%%
-# checking for null
-#VIN (1-10)
-print('VIN (1-10):',df['VIN (1-10)'].isnull().sum)
-#%% 
-#County
-print('County:',df['County'].isnull().sum())
-#%%
-#City
-print('City:',df['City'].isnull().sum())
-#%%
-#State
-print('State:',df['State'].isnull().sum())
-#%%
-#Postal Code
-print('Postal Code:',df['Postal Code'].isnull().sum())
-#%%
-#Model Year
-print('Model Year:',df['Model Year'].isnull().sum())
-#%%
-#Make
-print('Make:',df['Make'].isnull().sum())
-#%%
-#Model
-print('Model:',df['Model'].isnull().sum())
-#%%
-#Electric Vehicle Type
-print('Electric Vehicle Type:',df['Electric Vehicle Type'].isnull().sum())
-#%%
+
 #Clean Alternative Fuel Vehicle (CAFV) Eligibility
 print('Clean Alternative Fuel Vehicle :',df['Clean Alternative Fuel Vehicle (CAFV) Eligibility'].isnull().sum())
 #%%
-#Electric Range
-print('Electric Range:',df['Electric Range'].isnull().sum())
-#%%
-#Base MSRP
-print('Base MSRP:',df['Base MSRP'].isnull().sum())
-#%%
-#Legislative District
-print('Legislative District:',df['Legislative District'].isnull().sum())
-#%%
-#DOL Vehicle ID
-print('DOL Vehicle ID:',df['DOL Vehicle ID'].isnull().sum())
-#%%
-#Vehicle Location
-print('Vehicle Location:',df['Vehicle Location'].isnull().sum())
-#%%
-#Electric Utility
-print('Electric Utility:',df['Electric Utility'].isnull().sum())
-#%%
-#2020 Census Tract
-print('2020 Census Tract:',df['2020 Census Tract'].isnull().sum())
-#%%
+
 print(df['County'].value_counts().plot(kind='bar'))
+#%%
+ 
+df.isnull().sum()
+
 #%%
 df['Make'].value_counts().plot(kind='pie')
 print(df['Model Year'].value_counts())
@@ -90,6 +47,8 @@ df['Model Year'].value_counts().sort_index().plot()
 plt.title("EV Registrations by Model Year")
 plt.show()
 #%%
+df['Make'].value_counts().head(10).plot(kind='bar')
+#%%
 sns.histplot(df['Electric Range'], bins=30)
 plt.title("Electric Range Distribution")
 plt.show()
@@ -97,3 +56,4 @@ plt.show()
 sns.heatmap(df.corr(numeric_only=True), annot=True)
 plt.tight_layout()
 plt.show()
+
